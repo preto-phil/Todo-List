@@ -20,3 +20,30 @@ task1.getTitle();
 task1.getDescription();
 task1.getDate();
 task1.getCard();
+
+
+
+
+//// Experimental Section
+
+function newTodoDiv() {
+  const newTodo = document.getElementById('new-todo');
+  newTodo.addEventListener('click', () => {
+    const add = document.getElementById('add');
+    add.style.display = 'grid';
+  });
+}
+
+newTodoDiv();
+
+
+const title = document.getElementById('title');
+const description = document.getElementById('description');
+const date = document.getElementById('date');
+
+const addTodo = document.getElementById('add-todo');
+addTodo.addEventListener('click', () => {
+  console.log(title.value);
+  console.log(description.value);
+  console.log(date.value);
+})
