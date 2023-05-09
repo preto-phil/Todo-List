@@ -41,9 +41,20 @@ const title = document.getElementById('title');
 const description = document.getElementById('description');
 const date = document.getElementById('date');
 
-const addTodo = document.getElementById('add-todo');
+/* const addTodo = document.getElementById('add-todo');
 addTodo.addEventListener('click', () => {
   console.log(title.value);
   console.log(description.value);
   console.log(date.value);
-})
+}) */
+
+const addTodo = document.getElementById('add-todo');
+addTodo.addEventListener('click', () => {
+  
+  const task = obj(title.value, description.value, date.value);
+  task.getTitle();
+  // Instead of this - build card and add to card
+  task.getDescription();
+  task.getDate();
+  task.getCard();
+});
