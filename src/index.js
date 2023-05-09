@@ -14,12 +14,12 @@ const obj = (title, description, date) => {
   }
 }
 
-const task1 = obj('Guitar Practice', 'Practice G an C chord for 15 min, followed by 15min free play', '19:00, 09 May 2013');
+/* const task1 = obj('Guitar Practice', 'Practice G an C chord for 15 min, followed by 15min free play', '19:00, 09 May 2013');
 
 task1.getTitle();
 task1.getDescription();
 task1.getDate();
-task1.getCard();
+task1.getCard(); */
 
 
 
@@ -37,9 +37,7 @@ function newTodoDiv() {
 newTodoDiv();
 
 
-const title = document.getElementById('title');
-const description = document.getElementById('description');
-const date = document.getElementById('date');
+
 
 /* const addTodo = document.getElementById('add-todo');
 addTodo.addEventListener('click', () => {
@@ -48,13 +46,57 @@ addTodo.addEventListener('click', () => {
   console.log(date.value);
 }) */
 
+const title = document.getElementById('title');
+const description = document.getElementById('description');
+const date = document.getElementById('date');
+
+function buildCard() {
+  const contentDiv = document.getElementById('content');
+
+  const createDiv = document.createElement('div');
+  createDiv.classList.add('createdDiv');
+  contentDiv.appendChild(createDiv);
+
+  function cardTitle() {
+    const titleDiv = document.createElement('div');
+    titleDiv.classList.add('titleDiv');
+    titleDiv.innerText = title.value;
+    console.log(title.value);
+    createDiv.appendChild(titleDiv);
+  }
+  
+  function cardDescription() {
+    const descriptionDiv = document.createElement('div');
+    descriptionDiv.classList.add('desDiv');
+    descriptionDiv.innerText = description.value;
+    console.log(description.value);
+    createDiv.appendChild(descriptionDiv);
+  }
+  
+  function cardDate() {
+    const dateDiv = document.createElement('div');
+    dateDiv.classList.add('dateDiv');
+    dateDiv.innerText = date.value;
+    console.log(date.value);
+    createDiv.appendChild(dateDiv);
+  }
+  
+
+  cardTitle();
+  cardDescription();
+  cardDate();
+
+
+}
+
 const addTodo = document.getElementById('add-todo');
 addTodo.addEventListener('click', () => {
   
-  const task = obj(title.value, description.value, date.value);
-  task.getTitle();
-  // Instead of this - build card and add to card
+/*   const task = obj(title.value, description.value, date.value); */
+/*   task.getTitle();
   task.getDescription();
   task.getDate();
-  task.getCard();
+  task.getCard(); */
+
+  buildCard();
 });
