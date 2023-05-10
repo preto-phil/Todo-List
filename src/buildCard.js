@@ -1,22 +1,3 @@
-import './style.css';
-/* import buildCard from './buildCard'; */
-
-/* const obj = (title, description, date) => {
-  const getTitle = () => console.log(`Title: ${title}`);
-  const getDescription = () => console.log(`Description: ${description}`);
-  const getDate = () => console.log(`Date: ${date}`);
-  const getCard = () => console.log(`${title}, ${description}, ${date}`)
-
-  return {
-    getTitle,
-    getDescription,
-    getDate,
-    getCard
-  }
-} */
-
-const array = [];
-
 export default function buildCard() {
   const title = document.getElementById('title');
   const description = document.getElementById('description');
@@ -59,7 +40,6 @@ export default function buildCard() {
     deleteDiv.innerText = 'Delete';
     deleteDiv.addEventListener('click', () => {
       createDiv.remove();
-      dltArrayObj();
     });
     createDiv.appendChild(deleteDiv);
   }
@@ -71,61 +51,3 @@ export default function buildCard() {
 
 }
 
-
-
-//// Experimental Section
-
-function newTodoDiv() {
-  const newTodo = document.getElementById('new-todo');
-  newTodo.addEventListener('click', () => {
-    const add = document.getElementById('add');
-    add.style.display = 'grid';
-  });
-}
-
-newTodoDiv();
-
-const addTodo = document.getElementById('add-todo');
-addTodo.addEventListener('click', () => {
-  buildCard();
-  addToArray();
-});
-
-let idNumber = 0;
-
-function addToArray() {
-  const obj = {
-    id: idNumber,
-    title: title.value,
-    description: description.value,
-    date: date.value
-  }
-  
-  array.push(obj);
-  
-  console.log(obj);
-  console.log(array);
-
-  idNumber += 1;
-}
-
-function dltArrayObj() {
-  const index = array.indexOf(5);
-  array.splice(index, 1);
-  console.log(array);
-}
-
-function createArray() {
-
-  for (const x of array) {
-    
-  }
-}
-
-/* function deleteMode() {
-  deleteDiv.addEventListener('click', () => {
-    createDiv.remove();
-  });
-} */
-
-// Gebruik for loop om div cards te maak

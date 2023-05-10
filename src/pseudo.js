@@ -15,6 +15,11 @@
     // Create title div under card
     // Create description div under card
     // Create date div under card
-    // Set value of input equal to that of title/description/date 
+    // Set value of input equal to that of title/description/date
+    // Store information in an array (?) 
     // Add a delete button that removes card
       // Add event listener that runs this removal code
+
+// Open up web page
+// Existing TDL items generated
+  // Using for of loop
