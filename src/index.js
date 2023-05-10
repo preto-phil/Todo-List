@@ -15,9 +15,11 @@ import './style.css';
   }
 } */
 
+let idNumber = 0;
+
 const array = [];
 
-export default function buildCard() {
+function buildCard() {
   const title = document.getElementById('title');
   const description = document.getElementById('description');
   const date = document.getElementById('date');
@@ -71,6 +73,12 @@ export default function buildCard() {
 
 }
 
+function dltArrayObj() {
+  const index = idNumber;
+  console.log(index);
+  array.splice(index, 1);
+  console.log(array);
+}
 
 
 //// Experimental Section
@@ -91,7 +99,6 @@ addTodo.addEventListener('click', () => {
   addToArray();
 });
 
-let idNumber = 0;
 
 function addToArray() {
   const obj = {
@@ -109,18 +116,13 @@ function addToArray() {
   idNumber += 1;
 }
 
-function dltArrayObj() {
-  const index = array.indexOf(5);
-  array.splice(index, 1);
-  console.log(array);
-}
 
-function createArray() {
+/* function createArray() {
 
   for (const x of array) {
     
   }
-}
+} */
 
 /* function deleteMode() {
   deleteDiv.addEventListener('click', () => {
