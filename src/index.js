@@ -1,4 +1,6 @@
 import './style.css';
+import openGithub from './github';
+
 /* import buildCard from './buildCard'; */
 
 /* const obj = (title, description, date) => {
@@ -131,3 +133,7 @@ function addToArray() {
 } */
 
 // Gebruik for loop om div cards te maak
+
+
+// Click on github icon to open github
+openGithub();

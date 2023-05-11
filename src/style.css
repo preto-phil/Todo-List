@@ -62,16 +62,16 @@ body {
 }
 
 #footer-icon {
+  grid-area: 1 / 2 / 2 / 3;
+
   display: flex;
   justify-content: start;
   align-items: center;
 }
 
 #github-icon {
-  grid-area: 1 / 2 / 2 / 3;
-
   height: 70%;
-  width: 30%;
+  width: 8%;
   
   cursor: pointer;
 
@@ -80,6 +80,8 @@ body {
   background-size: 100% 100%;
 
   border: none;
+
+  padding-left: 10px;
 }
 
 #github-icon:hover {
