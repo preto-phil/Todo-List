@@ -10,15 +10,14 @@ body {
 
 #big-daddy-div {
   display: grid;
-  grid-template-columns: 1fr 7fr;
-  grid-template-rows: 2fr 13fr 1fr;
+  grid-template-rows: 1.2fr 14fr 0.8fr;
 
   width: 100vw;
   height: 100vh;
 }
 
 #main-header {
-  grid-area: 1 / 1 / 2 / 3;
+  grid-area: 1 / 1 / 2 / 2;
 
   background-color: rgb(59, 58, 58);
 
@@ -26,21 +25,17 @@ body {
   justify-content: center;
   align-items: center;
   padding-left: 40px;
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 600;
   color: whitesmoke;
 }
 
-#sidebar {
-  grid-area: 2 / 1 / 3 / 2;
-
-  background-color: rgb(97, 96, 96);
-}
 
 #main-body {
-  grid-area: 2 / 2 / 3 / 3;
+  grid-area: 2 / 1 / 3 / 2;
 
   background-color: rgb(49, 47, 47);
+  background-image: linear-gradient(rgb(49, 48, 48), rgb(100, 100, 99), rgb(49, 49, 49));
 
   display: flex;
   justify-content: center;
@@ -57,7 +52,7 @@ body {
 
   display: grid;
   grid-template-rows: 1fr 4fr;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr 4fr 1fr;
 }
 
 .header {
@@ -66,9 +61,11 @@ body {
   background-color: rgb(221, 220, 220);
 }
 
-.sidebar {
+.sidebar-left {
   grid-area: 1 / 1 / 3 / 2;
   background-color: rgb(97, 96, 96);
+
+  padding: 10px;
 }
 
 .content {
@@ -79,13 +76,18 @@ body {
   justify-content: center;
 }
 
+.sidebar-right {
+  grid-area: 1 / 3 / 3 / 4;
+  background-color: rgb(97, 96, 96);
 
+  padding: 10px;
+}
 
 
 
 
 #main-footer {
-  grid-area: 3 / 1 / 4 / 3;
+  grid-area: 3 / 1 / 4 / 2;
 
   background-color: rgb(59, 58, 58);
   display: flex;
