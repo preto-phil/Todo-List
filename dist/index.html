@@ -7,38 +7,43 @@
   <title>Todo List</title>
 </head>
 <body>
-  <div id="header"></div>
+  <div id="big-daddy-div">
 
-  <div id="sidebar"></div>
+    <div id="header">
+      <div>Phil's Todo List</div>
+    </div>
 
-  <div>
-    <button id="new-todo">New Todo</button>
+    <div id="sidebar"></div>
+
+    <div id="content">
+      <div>
+        <button id="new-todo">New Todo</button>
+      </div>
+      <div id="add" style="display: none;">
+        <div id="add-title">
+          <div id="tit-text">Title:</div>
+          <input type="text" name="title" id="title">
+        </div>
+        <div id="add-description">
+          <div id="des-text">Description:</div>
+          <input type="text"  name="description" id="description">
+        </div>
+        <div>
+          <div id="date-text">Date:</div>
+          <input type="date" name="date" id="date">
+        </div>
+        <button id="add-todo">Add Todo</button>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div id="footer-text">Created by preto-phil</div>
+      <div id="footer-icon">
+        <div id="github-icon"></div>
+      </div>
+    </div>
+
   </div>
-
-  <div id="add" style="display: none;">
-
-    <div id="add-title">
-      <div id="tit-text">Title:</div>
-      <input type="text" name="title" id="title">
-    </div>
-
-    <div id="add-description">
-      <div id="des-text">Description:</div>
-      <input type="text"  name="description" id="description">
-    </div>
-
-    <div>
-      <div id="date-text">Date:</div>
-      <input type="date" name="date" id="date">
-    </div>
-
-    <button id="add-todo">Add Todo</button>
-
-  </div>
-
-  <div id="content"></div>
-
-  <div id="footer"></div>
 
   <script src="main.js"></script>
 </body>
