@@ -28,6 +28,7 @@ body {
   padding-left: 40px;
   font-size: 4rem;
   font-weight: 600;
+  color: whitesmoke;
 }
 
 #sidebar {
@@ -36,10 +37,23 @@ body {
   background-color: rgb(97, 96, 96);
 }
 
-#content {
+#content-daddy {
   grid-area: 2 / 2 / 3 / 3;
 
   background-color: rgb(221, 220, 220);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#content {
+  width: 80%;
+  height: 80%;
+
+  background-color: rgb(58, 57, 57);
+  color: whitesmoke;
+  font-size: 2rem;
 }
 
 #footer {
@@ -54,7 +68,7 @@ body {
 #footer-text {  
   font-size: 1.5rem;
   font-weight: 500;
-
+  color: whitesmoke;
 }
 
 #github-icon {
