@@ -57,47 +57,18 @@ let createTodo = () => {
       <div class="date.div">${x.date}</div>
 
       <div class="options">
-        <i class="fas fa-edit edit"></i>
-        <i class="fas fa-trash-alt dlt"></i>
+        <button onclick="editTodo(this)" class="edit">
+          <i class="fas fa-edit"></i>
+        </button>
+        <button onclick="deleteTodo(this)" class="dlt">
+          <i class="fas fa-trash-alt dlt"></i>
+        </button>
       </div>
     </div>
     `);
   });
 };
 
-/* function editFunction() {
-  let editDiv = document.querySelectorAll(".edit");
-  for (let i = 0; i < editDiv.length; i++) {
-    editDiv[i].onclick = (e) => {
-      editTodo(e);
-      console.log('Yolo')
-    };
-  }
-}   */
-
-/* function dltFunction() {
-  const dltDiv = document.querySelectorAll('.dlt');
-  for (let i = 0; i < dltDiv.length; i++) {
-    dltDiv[i].onclick = (e) => {
-      deleteTodo(e);
-      createTodo();
-      console.log('Yolo Once')
-    };
-  }
-} */
-
-const dltDiv = document.querySelectorAll('.dlt');
-for (let i = 0; i < dltDiv.length; i++) {
-  dltDiv[i].onclick = (e) => {
-    alert('Hos');
-    console.log('Yolo Once')
-  };
-}
-
-
-/* editFunction();
-dltFunction();
- */
 /// Reset form
 
 function resetForm() {
@@ -133,6 +104,14 @@ let editTodo = (e) => {
 
 // Add todo
 addTodo();
+
+// Add from local storage
+(() => {
+  data = JSON.parse(localStorage.getItem('data')) || [];
+  console.log(data);
+  createTodo()
+})();
+
 
 // Click on github icon to open github
 function openGithub() {
