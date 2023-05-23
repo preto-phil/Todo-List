@@ -73,7 +73,9 @@ body {
   background-color: rgb(221, 220, 220);
 
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  row-gap: 1rem;
+  padding: 10px;
 }
 
 #sidebar-right {
@@ -84,6 +86,24 @@ body {
 
   font-size: 1.5rem;
 }
+
+
+
+.createdDiv {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  background-color: rgb(255, 252, 252);
+  font-size: 1rem;
+
+  width: 80%;
+  height: 40px;
+  padding: 10px;
+}
+
+
+
 
 
 
