@@ -102,8 +102,6 @@ let editTodo = (e) => {
 };
 
 
-// Add todo
-addTodo();
 
 // Add from local storage
 (() => {
@@ -122,3 +120,20 @@ function openGithub() {
 }
 
 openGithub();
+
+
+
+/// Form Validation
+
+function formValidation() {
+  if (title.value = '') {
+    // add class invalid
+    // show text that asks for title value
+  } else if (description.value = '') {
+
+  } else if (date.value = '') {
+
+  } else {
+    addTodo();
+  }
+} 
