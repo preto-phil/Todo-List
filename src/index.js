@@ -9,9 +9,10 @@ function toggleNewTodo() {
     const add = document.getElementById('add');
     if (add.style.display === 'none') {
       add.style.display = 'grid';
-      newTodoBtn.innerText = 'Close'
+      newTodoBtn.innerText = 'Close';
     } else if (add.style.display === 'grid') {
       add.style.display = 'none';
+      newTodoBtn.innerText = 'New Todo';
     }
   });
 }
