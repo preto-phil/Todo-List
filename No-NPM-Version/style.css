@@ -135,6 +135,16 @@ input {
   padding: 10px;
 }
 
+#title-msg,
+#description-msg,
+#date-msg {
+  color: rgb(233, 143, 143);
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding-top: 10px;
+  padding-left: 5px;
+}
+
 
 .createdDiv {
   display: flex;

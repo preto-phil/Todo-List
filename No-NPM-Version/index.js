@@ -37,14 +37,14 @@ function storeData() {
 
 // Build card on add click
 
-function addTodo() {
+function addTodoClick() {
   const addTodoBtn = document.getElementById('add-todo');
   addTodoBtn.addEventListener('click', () => {
-    storeData();
-    createTodo();
-    resetForm();
+    formValidation();
   })
 }
+
+addTodoClick();
 
 let createTodo = () => {
   const contentDiv = document.getElementById('content');
@@ -126,14 +126,25 @@ openGithub();
 /// Form Validation
 
 function formValidation() {
-  if (title.value = '') {
-    // add class invalid
-    // show text that asks for title value
-  } else if (description.value = '') {
-
-  } else if (date.value = '') {
-
-  } else {
-    addTodo();
+  console.log(title.value)
+  if (title.value === '') {
+    const titleMsg = document.getElementById('title-msg');
+    titleMsg.innerHTML = "Add a title";
+  }
+  
+  if (description.value === '') {
+    const descriptionMsg = document.getElementById('description-msg');
+    descriptionMsg.innerHTML = "Add a Description";
+  } 
+  
+  if (date.value === '') {
+    const dateMsg = document.getElementById('date-msg');
+    dateMsg.innerHTML = "Add a Date";
+  } 
+  
+  if (title.value !== '' && description.value !== '' && date.value !== '') {
+    storeData();
+    createTodo();
+    resetForm();
   }
 } 
