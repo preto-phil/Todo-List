@@ -126,19 +126,19 @@ openGithub();
 /// Form Validation
 
 function formValidation() {
-  console.log(title.value)
+  const titleMsg = document.getElementById('title-msg');
+  const descriptionMsg = document.getElementById('description-msg');
+  const dateMsg = document.getElementById('date-msg');
+
   if (title.value === '') {
-    const titleMsg = document.getElementById('title-msg');
     titleMsg.innerHTML = "Add a title";
   }
   
   if (description.value === '') {
-    const descriptionMsg = document.getElementById('description-msg');
     descriptionMsg.innerHTML = "Add a Description";
   } 
   
   if (date.value === '') {
-    const dateMsg = document.getElementById('date-msg');
     dateMsg.innerHTML = "Add a Date";
   } 
   
