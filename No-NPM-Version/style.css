@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: monospace;
+  margin: 0;
+  padding: 0;
+}
+
+#big-daddy-div {
+  display: grid;
+  grid-template-rows: 1.2fr 14fr 0.8fr;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+#main-header {
+  grid-area: 1 / 1 / 2 / 2;
+
+  background-color: rgb(59, 58, 58);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 40px;
+  font-size: 3rem;
+  font-weight: 600;
+  color: whitesmoke;
+}
+
+
+#main-body {
+  grid-area: 2 / 1 / 3 / 2;
+
+  background-color: rgb(49, 47, 47);
+  background-image: linear-gradient(rgb(49, 48, 48), rgb(100, 100, 99), rgb(49, 49, 49));
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#content-daddy {
+  width: 80%;
+  height: 80%;
+
+  background-color: rgb(58, 57, 57);
+  color: black;
+  font-size: 2rem;
+
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+  grid-template-columns: 1fr 8fr 2fr;
+}
+
+#header {
+  grid-area: 1 / 2 / 2 / 3;
+
+  background-color: rgb(221, 220, 220);
+}
+
+#sidebar-left {
+  grid-area: 1 / 1 / 3 / 2;
+  background-color: rgb(97, 96, 96);
+
+  padding: 10px;
+}
+
+#content {
+  grid-area: 2 / 2 / 3 / 3;
+  background-color: rgb(221, 220, 220);
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  padding: 10px;
+}
+
+#sidebar-right {
+  grid-area: 1 / 3 / 3 / 4;
+  background-color: rgb(97, 96, 96);
+
+  padding: 10px;
+
+  font-size: 1.5rem;
+}
+
+
+
+.createdDiv {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  background-color: rgb(255, 252, 252);
+  font-size: 1rem;
+
+  width: 80%;
+  height: 40px;
+  padding: 10px;
+}
+
+
+
+
+
+
+#main-footer {
+  grid-area: 3 / 1 / 4 / 2;
+
+  background-color: rgb(59, 58, 58);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer-text {  
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: whitesmoke;
+}
+
+#github-icon {
+  height: 70%;
+  width: 8%;
+  
+  cursor: pointer;
+
+  background: url('./gh-icon.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  border: none;
+
+}
+
+#github-icon:hover {
+  height: 80%;
+}
