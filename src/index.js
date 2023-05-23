@@ -40,14 +40,14 @@ function storeData() {
 
 // Build card on add click
 
-function addTodo() {
+function addTodoClick() {
   const addTodoBtn = document.getElementById('add-todo');
   addTodoBtn.addEventListener('click', () => {
-    storeData();
-    createTodo();
-    resetForm();
+    formValidation();
   })
 }
+
+addTodoClick();
 
 let createTodo = () => {
   const contentDiv = document.getElementById('content');
@@ -57,50 +57,21 @@ let createTodo = () => {
     <div id=${y} class="createdDiv">
       <div class="titleDiv">${x.title}</div>
       <div class="desDiv">${x.description}</div>
-      <div class="date.div">${x.date}</div>
+      <div class="dateDiv">${x.date}</div>
 
       <div class="options">
-        <i class="fas fa-edit edit"></i>
-        <i class="fas fa-trash-alt dlt"></i>
+        <button onclick="editTodo(this)" class="edit">
+          <i class="fas fa-edit"></i>
+        </button>
+        <button onclick="deleteTodo(this)" class="dlt">
+          <i class="fas fa-trash-alt dlt"></i>
+        </button>
       </div>
     </div>
     `);
   });
 };
 
-/* function editFunction() {
-  let editDiv = document.querySelectorAll(".edit");
-  for (let i = 0; i < editDiv.length; i++) {
-    editDiv[i].onclick = (e) => {
-      editTodo(e);
-      console.log('Yolo')
-    };
-  }
-}   */
-
-/* function dltFunction() {
-  const dltDiv = document.querySelectorAll('.dlt');
-  for (let i = 0; i < dltDiv.length; i++) {
-    dltDiv[i].onclick = (e) => {
-      deleteTodo(e);
-      createTodo();
-      console.log('Yolo Once')
-    };
-  }
-} */
-
-const dltDiv = document.querySelectorAll('.dlt');
-for (let i = 0; i < dltDiv.length; i++) {
-  dltDiv[i].onclick = (e) => {
-    alert('Hos');
-    console.log('Yolo Once')
-  };
-}
-
-
-/* editFunction();
-dltFunction();
- */
 /// Reset form
 
 function resetForm() {
@@ -134,8 +105,43 @@ let editTodo = (e) => {
 };
 
 
-// Add todo
-addTodo();
+
+// Add from local storage
+(() => {
+  data = JSON.parse(localStorage.getItem('data')) || [];
+  console.log(data);
+  createTodo()
+})();
+
+
+/// Form Validation
+
+function formValidation() {
+  const titleMsg = document.getElementById('title-msg');
+  const descriptionMsg = document.getElementById('description-msg');
+  const dateMsg = document.getElementById('date-msg');
+
+  if (title.value === '') {
+    titleMsg.innerHTML = "Add a title";
+  }
+  
+  if (description.value === '') {
+    descriptionMsg.innerHTML = "Add a Description";
+  } 
+  
+  if (date.value === '') {
+    dateMsg.innerHTML = "Add a Date";
+  } 
+  
+  if (title.value !== '' && description.value !== '' && date.value !== '') {
+    titleMsg.innerHTML = "";
+    descriptionMsg.innerHTML = "";
+    dateMsg.innerHTML = "";
+    storeData();
+    createTodo();
+    resetForm();
+  }
+} 
 
 // Click on github icon to open github
 openGithub();
