@@ -54,7 +54,7 @@ let createTodo = () => {
     <div id=${y} class="createdDiv">
       <div class="titleDiv">${x.title}</div>
       <div class="desDiv">${x.description}</div>
-      <div class="date.div">${x.date}</div>
+      <div class="dateDiv">${x.date}</div>
 
       <div class="options">
         <button onclick="editTodo(this)" class="edit">
@@ -143,6 +143,9 @@ function formValidation() {
   } 
   
   if (title.value !== '' && description.value !== '' && date.value !== '') {
+    titleMsg.innerHTML = "";
+    descriptionMsg.innerHTML = "";
+    dateMsg.innerHTML = "";
     storeData();
     createTodo();
     resetForm();
