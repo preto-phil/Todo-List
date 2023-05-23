@@ -1,5 +1,6 @@
 import './style.css';
 import openGithub from './github';
+import buildCard from './buildCard';
 
 // Dropdown for add
 
@@ -22,3 +23,14 @@ toggleNewTodo();
 
 // Click on github icon to open github
 openGithub();
+
+// Build card on add click
+
+function addTodo() {
+  const addTodoBtn = document.getElementById('add-todo');
+  addTodoBtn.addEventListener('click', () => {
+    buildCard();
+  })
+}
+
+addTodo();
