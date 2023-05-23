@@ -1,6 +1,10 @@
 import './style.css';
 import openGithub from './github';
 import buildCard from './buildCard';
+import storeData from './data';
+
+
+let data = [];
 
 // Dropdown for add
 
@@ -21,16 +25,39 @@ function toggleNewTodo() {
 toggleNewTodo();
 
 
-// Click on github icon to open github
-openGithub();
+// Store data
+function storeData() {
+  const title = document.getElementById('title');
+  const description = document.getElementById('description');
+  const date = document.getElementById('date');
+
+  data.push({
+    title: title.value,
+    description: description.value,
+    date: date.value,
+  });
+
+  localStorage.setItem('data', JSON.stringify(data));
+}
+
 
 // Build card on add click
 
 function addTodo() {
   const addTodoBtn = document.getElementById('add-todo');
   addTodoBtn.addEventListener('click', () => {
+    storeData();
     buildCard();
   })
 }
 
 addTodo();
+
+
+
+
+
+
+
+// Click on github icon to open github
+openGithub();
