@@ -68,22 +68,39 @@ let createTodo = () => {
   });
 };
 
-let editDiv = document.getElementsByClassName("edit");
-for (let i = 0; i < editDiv.length; i++) {
-  editDiv[i].addEventListener('click', (e) => {
-    editTodo(e);
-  });
-}
+/* function editFunction() {
+  let editDiv = document.querySelectorAll(".edit");
+  for (let i = 0; i < editDiv.length; i++) {
+    editDiv[i].onclick = (e) => {
+      editTodo(e);
+      console.log('Yolo')
+    };
+  }
+}   */
 
+/* function dltFunction() {
+  const dltDiv = document.querySelectorAll('.dlt');
+  for (let i = 0; i < dltDiv.length; i++) {
+    dltDiv[i].onclick = (e) => {
+      deleteTodo(e);
+      createTodo();
+      console.log('Yolo Once')
+    };
+  }
+} */
 
-const dltDiv = document.getElementsByClassName('dlt');
+const dltDiv = document.querySelectorAll('.dlt');
 for (let i = 0; i < dltDiv.length; i++) {
-  dltDiv[i].addEventListener('click', (e) => {
-    deleteTodo(e);
-    createTodo();
-  });
+  dltDiv[i].onclick = (e) => {
+    alert('Hos');
+    console.log('Yolo Once')
+  };
 }
 
+
+/* editFunction();
+dltFunction();
+ */
 /// Reset form
 
 function resetForm() {
