@@ -1,8 +1,6 @@
 import './style.css';
 import openGithub from './github';
 import buildCard from './buildCard';
-import storeData from './data';
-
 
 let data = [];
 
@@ -48,12 +46,19 @@ function addTodo() {
   addTodoBtn.addEventListener('click', () => {
     storeData();
     buildCard();
+    resetForm();
   })
 }
 
 addTodo();
 
+/// Reset form
 
+function resetForm() {
+  title.value = "";
+  description.value = "";
+  date.value = "";
+};
 
 
 
