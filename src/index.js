@@ -1,6 +1,5 @@
 import './style.css';
 import openGithub from './github';
-import buildCard from './buildCard';
 
 let data = [];
 
@@ -45,12 +44,45 @@ function addTodo() {
   const addTodoBtn = document.getElementById('add-todo');
   addTodoBtn.addEventListener('click', () => {
     storeData();
-    buildCard();
+    createTodo();
     resetForm();
   })
 }
 
-addTodo();
+let createTodo = () => {
+  const contentDiv = document.getElementById('content');
+  contentDiv.replaceChildren();
+  data.map((x, y) => {
+    return (contentDiv.innerHTML += `
+    <div id=${y} class="createdDiv">
+      <div class="titleDiv">${x.title}</div>
+      <div class="desDiv">${x.description}</div>
+      <div class="date.div">${x.date}</div>
+
+      <div class="options">
+        <i class="fas fa-edit edit"></i>
+        <i class="fas fa-trash-alt dlt"></i>
+      </div>
+    </div>
+    `);
+  });
+};
+
+let editDiv = document.getElementsByClassName("edit");
+for (let i = 0; i < editDiv.length; i++) {
+  editDiv[i].addEventListener('click', (e) => {
+    editTodo(e);
+  });
+}
+
+
+const dltDiv = document.getElementsByClassName('dlt');
+for (let i = 0; i < dltDiv.length; i++) {
+  dltDiv[i].addEventListener('click', (e) => {
+    deleteTodo(e);
+    createTodo();
+  });
+}
 
 /// Reset form
 
@@ -60,9 +92,33 @@ function resetForm() {
   date.value = "";
 };
 
+// Delete todo function
+
+function deleteTodo(e) {
+  e.parentElement.parentElement.remove();
+
+  data.splice(e.parentElement.parentElement.id, 1);
+
+  localStorage.setItem("data", JSON.stringify(data));
+
+  console.log(data);
+};
+
+// Edit todo function
+
+let editTodo = (e) => {
+  let selectedTodo = e.parentElement.parentElement;
+
+  title.value = selectedTodo.children[0].innerHTML;
+  description.value = selectedTodo.children[1].innerHTML;
+  date.value = selectedTodo.children[2].innerHTML;
+
+  deleteTodo(e);
+};
 
 
-
+// Add todo
+addTodo();
 
 // Click on github icon to open github
 openGithub();
