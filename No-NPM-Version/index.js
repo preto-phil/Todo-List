@@ -98,6 +98,11 @@ let editTodo = (e) => {
   description.value = selectedTodo.children[1].innerHTML;
   date.value = selectedTodo.children[2].innerHTML;
 
+  const newTodoBtn = document.getElementById('new-todo-btn');
+  const add = document.getElementById('add');
+  add.style.display = 'grid';
+  newTodoBtn.innerText = 'Close';
+
   deleteTodo(e);
 };
 
