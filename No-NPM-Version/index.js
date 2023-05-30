@@ -137,15 +137,26 @@ function formValidation() {
 
   if (title.value === '') {
     titleMsg.innerHTML = "Add a title";
+  } 
+  if (title.value !== '') {
+    titleMsg.innerHTML = "";
   }
+
+
   
   if (description.value === '') {
     descriptionMsg.innerHTML = "Add a Description";
-  } 
+  }
+  if (description.value !== '') {
+    descriptionMsg.innerHTML = "";
+  }
   
   if (date.value === '') {
     dateMsg.innerHTML = "Add a Date";
   } 
+  if (date.value !== '') {
+    dateMsg.innerHTML = "";
+  }
   
   if (title.value !== '' && description.value !== '' && date.value !== '') {
     titleMsg.innerHTML = "";
